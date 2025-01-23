@@ -237,11 +237,11 @@ Search contracts Consolidate and following same filter as (id, issue_date (with 
   
 ```
 
-Observation was added more two option one put and delete.
+Observation was added more two options, one put and delete.
 
 The option put is very simple
 
-Update Information PUT
+Update Information the specific contract using PUT
 ```sh
 
 curl -X PUT \
@@ -270,7 +270,7 @@ curl -X PUT \
 
 ```
 
-Delete one record DELETE
+Delete one record using DELETE
 
 ```sh
 curl -X DELETE http://localhost:8000/api/contracts/1
