@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+
+  api:
+    container_name: contracts
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command:  bash -c "python manage.py makemigrations && python manage.py migrate &&  python manage.py runserver 0.0.0.0:8000"
+    depends_on:
+      - db
+    ports:
+      - "8000:8000"
+    environment:
+      - ENV=PYTHONUNBUFFERED=1
+      - NAME=contracts
+      - USER=postgres
+      - PASSWORD=123456
+      - HOST=db
+      - PORT=5432
+    networks:
+      - default
+  db:
+    container_name: postgreedb
+    image: postgres:16.0
+    restart: always
+    ports:
+        - 5432:5432
+    environment:
+        - POSTGRES_DB=contracts
+        - POSTGRES_PASSWORD=123456
+    command: ["-c", "shared_buffers=256MB", "-c", "max_connections=500"]
+    networks:
+        - default
+
+networks:
+  default:
+    driver: bridge
