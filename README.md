@@ -237,6 +237,31 @@ Search contracts Consolidate and following same filter as (id, issue_date (with 
   
 ```
 
+Search one specific contract 
+```sh
+curl -X GET  http://localhost:8000/api/contracts/1
+
+{
+    "id": 2,
+    "issue_date": "2020-05-18",
+    "born_date": "1989-04-04",
+    "value": 1000.0,
+    "cpf": "40425173070",
+    "country": "Brazil",
+    "province": "MG",
+    "city": "Sao Francisco",
+    "telephone": "+5538993685543",
+    "tax": 19.33,
+    "invoices": [
+        {
+            "id": 4,
+            "invoice_number": 1234,
+            "value": 1000.0,
+            "due_date": "2024-04-04"
+        }
+    ]
+}
+```
 Observation was added more two options, one put and delete.
 
 The option put is very simple
