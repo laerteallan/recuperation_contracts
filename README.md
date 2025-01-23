@@ -1,7 +1,8 @@
 # Test Contracts
 
-This project was written in **Python** language using a version **3.12.6*, with the framework **Django Rest Framework**, the of default **REST****, **PostgreSql** to database*** and was used an **object oriented programming**. 
-This porject was used django-filters to filter searches in database. Other deatail this project is change the settings to connect in SQLite databse.
+This project was written in ***Python** language using a version **3.12.6**, with the framework **Django Rest Framework**, the of default **REST***, **docker**, **docker-compose**, **PostgreSql** to database*** and was used an **object oriented programming**. 
+This porject was used **django-filters** to filter searches in database. Other deatail this project is change the settings to connect in SQLite databse.
+
 # Install
 
 For the local installation, you must have Python language 3.12.6 the package manager PIP and execute the following command:
@@ -13,6 +14,10 @@ Case have the docker-compose installed execute the command:
 ```sh
 docker-compose up
 ```
+
+obs: In case the not working in firstime, execute again o command **docker-compose up** maybe not create database and tables to working correct of project. 
+
+
 This will create one container ready for use.
 
 ## Environment Variable
